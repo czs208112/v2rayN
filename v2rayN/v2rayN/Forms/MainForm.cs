@@ -1086,12 +1086,14 @@ namespace v2rayN.Forms
                 if (HttpProxyHandle.RestartHttpAgent(config, true))
                 {
                     ChangePACButtonStatus(config.listenerType);
+                    this.notifyMain.Icon = Properties.Resources.v2rayN;
                 }
             }
             else
             {
                 HttpProxyHandle.Update(config, true);
                 HttpProxyHandle.CloseHttpAgent(config);
+                this.notifyMain.Icon = Properties.Resources.v2rayN_dark;
             }
 
             menuSysAgentEnabled.Checked =
